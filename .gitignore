@@ -130,3 +130,4 @@ dmypy.json
 /pydvdorganizer.code-workspace
 /.idea
 /.vscode
+/data.sqlite
