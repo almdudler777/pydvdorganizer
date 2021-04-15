@@ -2,10 +2,12 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QHeaderView, QMainWindow, QMessageBox, QTreeWidgetItem, QDialog
 
 import roles
+from actorwindow import ActorWindow
 from models import Movie
 from moviewindow import MovieWindow
 from ui_modules.mainwindow import Ui_MainWindow
 import math
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
@@ -38,7 +40,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionAbout.triggered.connect(self.evtAboutTriggered)
         self.actionSchlie_en.triggered.connect(self.close)
         self.actionNew_Movie.triggered.connect(self.evtActionNewMovie_triggered)
-        self.actionNeuer_Schauspieler.triggered.connect(self.evtActionNewMovie_triggered)
+        self.actionNeuer_Schauspieler.triggered.connect(self.evtactionNeuer_Schauspieler_triggered)
         self.trwMovieList.itemDoubleClicked.connect(self.evtMovieList_itemDoubleClicked)
         self.cbxPerPage.activated.connect(self.evtcbxPerPage_activated)
         self.btnPageBack.clicked.connect(self.evtbtnPageBack_clicked)
@@ -55,6 +57,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         w = MovieWindow(self)
         if w.exec_() == QDialog.Accepted:
             self.populateMovieListWidget()
+
+    def evtactionNeuer_Schauspieler_triggered(self):
+        w = ActorWindow(self)
+        w.exec_()
 
     def evtMovieList_itemDoubleClicked(self, item: QTreeWidgetItem, column: int):
         w = MovieWindow(self, int(item.data(0, roles.UserRoles.MOVIE_ID.value)))

@@ -135,13 +135,6 @@ class MovieWindow(QDialog, Ui_movieWindow):
             title=self.titel.text(),
         )
 
-        print(self._movieId)
-        print(self.preis.value())
-        print(self.laenge.value())
-        print(self.medien.value())
-        print(int(self.usk.currentText()))
-        print(self.titel.text())
-
         mov.type = Type.getTypeById(int(self.typ.currentData()))
 
         actorIds = list()

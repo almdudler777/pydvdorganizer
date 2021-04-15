@@ -31,7 +31,13 @@ class SelectionWindow(QDialog, Ui_selectionWindow):
                 self.treeWidget.addTopLevelItem(item)
 
         elif mode == roles.WindowSelectionRoles.MOVIE.value:
-            pass
+            self.treeWidget.headerItem().setText(0, "Filme")
+            self.setWindowTitle("Film hinzufügen")
+            for movie in Movie.getAllMovies():
+                item = QTreeWidgetItem(self.treeWidget)
+                item.setText(0, movie.title)
+                item.setData(0, roles.UserRoles.MOVIE_ID.value, movie.id)
+                self.treeWidget.addTopLevelItem(item)
 
         elif mode == roles.WindowSelectionRoles.CATEGORY.value:
             self.treeWidget.headerItem().setText(0, "Kategorie")
