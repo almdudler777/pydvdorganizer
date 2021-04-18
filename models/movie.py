@@ -1,4 +1,6 @@
+from __future__ import annotations
 from PyQt5.QtWidgets import QMessageBox
+from typing import List
 
 from database import Database as db
 from .actor import Actor
@@ -46,14 +48,12 @@ class Movie:
         return "{} (ID:{})".format(self.title, self.id)
 
     def setActors(self, actorIds: list):
-        if len(actorIds) > 0:
-            self.myActorIds.clear()
-            self.myActorIds.extend(actorIds)
+        self.myActorIds.clear()
+        self.myActorIds.extend(actorIds)
 
     def setCategories(self, categoryIds):
-        if len(categoryIds) > 0:
-            self.myCategoryIds.clear()
-            self.myCategoryIds.extend(categoryIds)
+        self.myCategoryIds.clear()
+        self.myCategoryIds.extend(categoryIds)
 
     def getActors(self) -> list:
         return Actor.getActorsByMovieId(self.id)
@@ -83,7 +83,8 @@ class Movie:
         # check that type has been set
         # @ TODO may open a selection box in modal dialog to ask for type?
         if not isinstance(self._type, Type):
-            QMessageBox.warning(None, "Type is undefined", "You can not save a movie without a disk type.", QMessageBox.Ok)
+            QMessageBox.warning(None, "Type is undefined", "You can not save a movie without a disk type.",
+                                QMessageBox.Ok)
             d.rollback()
             return
 
@@ -113,7 +114,7 @@ class Movie:
             d.rollback()
             return
 
-        if isinstance(self.myActorIds, list) and len(self.myActorIds) > 0:
+        if isinstance(self.myActorIds, list):
             qry.exec("DELETE FROM cast WHERE movie_id = {}".format(self._id))
             qry.clear()
 
@@ -123,7 +124,7 @@ class Movie:
                 qry.addBindValue(id)
                 qry.exec()
 
-        if isinstance(self.myCategoryIds, list) and len(self.myCategoryIds) > 0:
+        if isinstance(self.myCategoryIds, list):
             qry.exec("DELETE FROM tags WHERE movie_id = {}".format(self._id))
             qry.clear()
 
@@ -196,6 +197,33 @@ class Movie:
         return ret
 
     @classmethod
+    def getMoviesByActor(cls, actor: Actor) -> List[Movie]:
+        ret: List[Movie] = list()
+        qry = db.getInstance().getQuery()
+        qry.prepare("SELECT "
+                    "id, titel, laenge, medien, usk, preis, type_id "
+                    "FROM movies "
+                    "WHERE id IN ("
+                    "SELECT movie_id FROM cast WHERE actor_id = ?"
+                    ") "
+                    "ORDER BY titel "
+                    "COLLATE NOCASE ASC")
+        qry.addBindValue(actor.id)
+        if qry.exec():
+            while qry.next():
+                ret.append(Movie(
+                    id=int(qry.value(0)),
+                    title=str(qry.value(1)),
+                    length=int(qry.value(2)),
+                    mediums=int(qry.value(3)),
+                    rated=int(qry.value(4)),
+                    cost=float(qry.value(5)),
+                    type=Type.getTypeById(int(qry.value(6)))
+                ))
+        qry.clear()
+        return ret
+
+    @classmethod
     def getMoviesByType(cls, type: Type):
         qry = db.getInstance().getQuery()
         ret = list()
@@ -215,7 +243,8 @@ class Movie:
                         length=int(qry.value(2)),
                         mediums=int(qry.value(3)),
                         rated=int(qry.value(4)),
-                        cost=float(qry.value(5))
+                        cost=float(qry.value(5)),
+                        type=type
                     )
                 )
         qry.clear()

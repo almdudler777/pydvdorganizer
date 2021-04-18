@@ -1,5 +1,4 @@
 from PyQt5.QtWidgets import QMessageBox
-
 from database import Database as db
 
 
@@ -9,6 +8,7 @@ class Actor:
         self._id = id_
         self.name = name
         self.prename = prename
+        self._myMovieIds = list()
 
     @property
     def id(self):
@@ -30,6 +30,53 @@ class Actor:
             ret = int(qry.value(0))
         qry.clear()
         return ret
+
+    def setMovies(self, movieIds: list):
+        self._myMovieIds.clear()
+        self._myMovieIds.extend(movieIds)
+
+    def getMovies(self):
+        from models import Movie
+        return Movie.getMoviesByActor(self)
+
+    def save(self):
+        qry = db.getInstance().getQuery()
+        d = db.getInstance().getDatabase()
+        d.transaction()
+
+        if self._id == 0:
+            if qry.exec("INSERT INTO actors (`name`) VALUES ('New Item')"):
+                self._id = int(qry.lastInsertId())
+                qry.clear()
+            else:
+                QMessageBox.warning(None, "Could not create new Actor.", qry.lastError().text(), QMessageBox.Ok)
+                d.rollback()
+                return
+
+        qry.prepare("UPDATE actors "
+                    "SET prename = ?, name = ? "
+                    "WHERE id = ?")
+        qry.addBindValue(self.prename)
+        qry.addBindValue(self.name)
+        qry.addBindValue(self._id)
+
+        if not qry.exec():
+            QMessageBox.critical(None, "Error while saving.", qry.lastError().text() + qry.executedQuery(), QMessageBox.Ok)
+            d.rollback()
+            return
+
+        if isinstance(self._myMovieIds, list) and len(self._myMovieIds) > 0:
+            qry.exec("DELETE FROM cast WHERE actor_id = {}".format(self._id))
+            qry.clear()
+
+            qry.prepare("INSERT INTO cast (movie_id, actor_id) VALUES (?,?)")
+            for id in self._myMovieIds:
+                qry.addBindValue(id)
+                qry.addBindValue(self._id)
+                qry.exec()
+
+        d.commit()
+        qry.clear()
 
     @classmethod
     def getAllActors(cls) -> list:
