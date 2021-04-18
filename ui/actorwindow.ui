@@ -6,16 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>402</width>
-    <height>424</height>
+    <width>413</width>
+    <height>556</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Schauspieler anlegen</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,0">
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>res/50px-Dvd_icon.svg.png</normaloff>res/50px-Dvd_icon.svg.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetFixedSize</enum>
+   </property>
    <item>
-    <layout class="QGridLayout" name="gridLayout">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,1,0">
      <item row="1" column="0" colspan="4">
       <widget class="QTreeWidget" name="trwMovieList">
        <property name="alternatingRowColors">
