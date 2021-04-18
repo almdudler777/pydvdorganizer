@@ -60,7 +60,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def evtactionNeuer_Schauspieler_triggered(self):
         w = ActorWindow(self)
-        w.exec_()
+        if w.exec_() == QDialog.Accepted:
+            self.populateMovieListWidget()
 
     def evtMovieList_itemDoubleClicked(self, item: QTreeWidgetItem, column: int):
         w = MovieWindow(self, int(item.data(0, roles.UserRoles.MOVIE_ID.value)))
