@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>add.png</file>
+    <file>arrow_left.png</file>
+    <file>arrow_right.png</file>
+    <file>cancel.png</file>
+    <file>cd_add.png</file>
+    <file>delete.png</file>
+    <file>dvd_add.png</file>
+    <file>eye.png</file>
+    <file>film_add.png</file>
+    <file>film_save.png</file>
+    <file>logo.ico</file>
+    <file>logo.png</file>
+    <file>user_add.png</file>
+  </qresource>
+</RCC>

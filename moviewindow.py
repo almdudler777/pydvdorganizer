@@ -24,9 +24,9 @@ class MovieWindow(QDialog, Ui_movieWindow):
         self.accepted.connect(self.evt_movieWindow_accepted)
 
         # set the icons for the buttonbox
-        self.buttonBox.button(QDialogButtonBox.Ok).setIcon(QIcon("ui/res/film_save.png"))
+        self.buttonBox.button(QDialogButtonBox.Ok).setIcon(QIcon(":/icons/film_save.png"))
         self.buttonBox.button(QDialogButtonBox.Ok).setIconSize(QSize(16, 16))
-        self.buttonBox.button(QDialogButtonBox.Cancel).setIcon(QIcon("ui/res/cancel.png"))
+        self.buttonBox.button(QDialogButtonBox.Cancel).setIcon(QIcon(":/icons/cancel.png"))
         self.buttonBox.button(QDialogButtonBox.Cancel).setIconSize(QSize(16, 16))
 
         # just to make sure remove buttons are disabled from the startup

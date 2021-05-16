@@ -24,9 +24,9 @@ class ActorWindow(QDialog, Ui_actorWindow):
         self.evttrwMovieList_itemselectionchanged()
 
         # set the icons for the buttonbox
-        self.buttonBox.button(QDialogButtonBox.Ok).setIcon(QIcon("ui/res/film_save.png"))
+        self.buttonBox.button(QDialogButtonBox.Ok).setIcon(QIcon(":/icons/film_save.png"))
         self.buttonBox.button(QDialogButtonBox.Ok).setIconSize(QSize(16, 16))
-        self.buttonBox.button(QDialogButtonBox.Cancel).setIcon(QIcon("ui/res/cancel.png"))
+        self.buttonBox.button(QDialogButtonBox.Cancel).setIcon(QIcon(":/icons/cancel.png"))
         self.buttonBox.button(QDialogButtonBox.Cancel).setIconSize(QSize(16, 16))
 
         self._actorid = actorId

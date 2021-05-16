@@ -14,9 +14,9 @@ class SelectionWindow(QDialog, Ui_selectionWindow):
         self.setupUi(self)
 
         # set the icons for the buttonbox
-        self.buttonBox.button(QDialogButtonBox.Ok).setIcon(QIcon("ui/res/add.png"))
+        self.buttonBox.button(QDialogButtonBox.Ok).setIcon(QIcon(":/icons/add.png"))
         self.buttonBox.button(QDialogButtonBox.Ok).setIconSize(QSize(16, 16))
-        self.buttonBox.button(QDialogButtonBox.Cancel).setIcon(QIcon("ui/res/cancel.png"))
+        self.buttonBox.button(QDialogButtonBox.Cancel).setIcon(QIcon(":/icons/cancel.png"))
         self.buttonBox.button(QDialogButtonBox.Cancel).setIconSize(QSize(16, 16))
 
         self.treeWidget.header().setSectionResizeMode(QHeaderView.Stretch)

@@ -29,8 +29,8 @@
    <string>Neuer Film</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>res/50px-Dvd_icon.svg.png</normaloff>res/50px-Dvd_icon.svg.png</iconset>
+   <iconset resource="res/resources.qrc">
+    <normaloff>:/icons/logo.png</normaloff>:/icons/logo.png</iconset>
   </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
@@ -126,8 +126,8 @@
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>res/add.png</normaloff>res/add.png</iconset>
+          <iconset resource="res/resources.qrc">
+           <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
          </property>
         </widget>
        </item>
@@ -137,8 +137,8 @@
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>res/delete.png</normaloff>res/delete.png</iconset>
+          <iconset resource="res/resources.qrc">
+           <normaloff>:/icons/delete.png</normaloff>:/icons/delete.png</iconset>
          </property>
         </widget>
        </item>
@@ -264,8 +264,8 @@
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>res/add.png</normaloff>res/add.png</iconset>
+          <iconset resource="res/resources.qrc">
+           <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
          </property>
         </widget>
        </item>
@@ -275,8 +275,8 @@
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>res/delete.png</normaloff>res/delete.png</iconset>
+          <iconset resource="res/resources.qrc">
+           <normaloff>:/icons/delete.png</normaloff>:/icons/delete.png</iconset>
          </property>
         </widget>
        </item>
@@ -366,7 +366,9 @@
   <tabstop>schauspielerTree</tabstop>
   <tabstop>kategorieTree</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="res/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

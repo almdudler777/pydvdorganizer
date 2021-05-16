@@ -14,8 +14,8 @@
    <string>PyDVDOrganizer</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>res/50px-Dvd_icon.svg.png</normaloff>res/50px-Dvd_icon.svg.png</iconset>
+   <iconset resource="res/resources.qrc">
+    <normaloff>:/icons/logo.png</normaloff>:/icons/logo.png</iconset>
   </property>
   <widget class="QWidget" name="mainWidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0">
@@ -263,8 +263,8 @@
          <string>...</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>res/arrow_left.png</normaloff>res/arrow_left.png</iconset>
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/arrow_left.png</normaloff>:/icons/arrow_left.png</iconset>
         </property>
        </widget>
       </item>
@@ -274,8 +274,8 @@
          <string>...</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>res/arrow_right.png</normaloff>res/arrow_right.png</iconset>
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/arrow_right.png</normaloff>:/icons/arrow_right.png</iconset>
         </property>
        </widget>
       </item>
@@ -355,8 +355,8 @@
   </widget>
   <action name="actionNew_Movie">
    <property name="icon">
-    <iconset>
-     <normaloff>res/film_add.png</normaloff>res/film_add.png</iconset>
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/film_add.png</normaloff>:/icons/film_add.png</iconset>
    </property>
    <property name="text">
     <string>New Movie</string>
@@ -388,8 +388,8 @@
   </action>
   <action name="actionNeuer_Schauspieler">
    <property name="icon">
-    <iconset>
-     <normaloff>res/user_add.png</normaloff>res/user_add.png</iconset>
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/user_add.png</normaloff>:/icons/user_add.png</iconset>
    </property>
    <property name="text">
     <string>Neuer Schauspieler</string>
@@ -397,6 +397,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="res/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
