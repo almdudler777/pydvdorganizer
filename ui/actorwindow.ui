@@ -126,6 +126,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>ledName</tabstop>
+  <tabstop>ledPrename</tabstop>
+  <tabstop>trwMovieList</tabstop>
+  <tabstop>movieAdd</tabstop>
+  <tabstop>movieRemove</tabstop>
+ </tabstops>
  <resources>
   <include location="res/resources.qrc"/>
  </resources>

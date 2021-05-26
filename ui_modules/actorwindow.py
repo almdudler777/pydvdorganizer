@@ -81,6 +81,10 @@ class Ui_actorWindow(object):
         self.buttonBox.accepted.connect(actorWindow.accept)
         self.buttonBox.rejected.connect(actorWindow.reject)
         QtCore.QMetaObject.connectSlotsByName(actorWindow)
+        actorWindow.setTabOrder(self.ledName, self.ledPrename)
+        actorWindow.setTabOrder(self.ledPrename, self.trwMovieList)
+        actorWindow.setTabOrder(self.trwMovieList, self.movieAdd)
+        actorWindow.setTabOrder(self.movieAdd, self.movieRemove)
 
     def retranslateUi(self, actorWindow):
         _translate = QtCore.QCoreApplication.translate
