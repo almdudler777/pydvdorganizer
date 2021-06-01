@@ -38,9 +38,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Signal setup
         self.actionAbout_Qt.triggered.connect(self.evtAboutQtTriggered)
         self.actionAbout.triggered.connect(self.evtAboutTriggered)
-        self.actionSchlie_en.triggered.connect(self.close)
-        self.actionNew_Movie.triggered.connect(self.evtActionNewMovie_triggered)
-        self.actionNeuer_Schauspieler.triggered.connect(self.evtactionNeuer_Schauspieler_triggered)
+        self.actionClose.triggered.connect(self.close)
+        self.actionNewMovie.triggered.connect(self.evtActionNewMovie_triggered)
+        self.actionNewActor.triggered.connect(self.evtactionNeuer_Schauspieler_triggered)
         self.trwMovieList.itemDoubleClicked.connect(self.evtMovieList_itemDoubleClicked)
         self.cbxPerPage.activated.connect(self.evtcbxPerPage_activated)
         self.btnPageBack.clicked.connect(self.evtbtnPageBack_clicked)

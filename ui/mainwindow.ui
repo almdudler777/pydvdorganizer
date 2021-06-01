@@ -17,6 +17,9 @@
    <iconset resource="res/resources.qrc">
     <normaloff>:/icons/logo.png</normaloff>:/icons/logo.png</iconset>
   </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
   <widget class="QWidget" name="mainWidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0">
     <item>
@@ -49,7 +52,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Einträge pro Seite:</string>
+         <string>Items per Page: </string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -69,47 +72,47 @@
         </property>
         <item>
          <property name="text">
-          <string>Alle</string>
+          <string>All</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>25</string>
+          <string notr="true">25</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>50</string>
+          <string notr="true">50</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>75</string>
+          <string notr="true">75</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>100</string>
+          <string notr="true">100</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>150</string>
+          <string notr="true">150</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>200</string>
+          <string notr="true">200</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>300</string>
+          <string notr="true">300</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>500</string>
+          <string notr="true">500</string>
          </property>
         </item>
        </widget>
@@ -148,7 +151,7 @@
        </property>
        <column>
         <property name="text">
-         <string notr="true">Datenbank</string>
+         <string>Database</string>
         </property>
        </column>
       </widget>
@@ -197,12 +200,12 @@
        </attribute>
        <column>
         <property name="text">
-         <string>Name</string>
+         <string>Title</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Länge</string>
+         <string>Length</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -210,7 +213,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Medien</string>
+         <string>Disks</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -218,7 +221,7 @@
        </column>
        <column>
         <property name="text">
-         <string>USK</string>
+         <string>PEGI</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -226,7 +229,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Kategorien</string>
+         <string>Categories</string>
         </property>
        </column>
        <column>
@@ -236,7 +239,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Preis</string>
+         <string>Price</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -250,7 +253,7 @@
       <item>
        <widget class="QLabel" name="lblPage">
         <property name="text">
-         <string>Seite:</string>
+         <string>Page:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -314,22 +317,25 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuDatei">
+   <widget class="QMenu" name="menuFile">
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
     <property name="title">
-     <string>Datei</string>
+     <string>File</string>
     </property>
     <addaction name="separator"/>
-    <addaction name="actionSchlie_en"/>
+    <addaction name="actionClose"/>
    </widget>
-   <widget class="QMenu" name="menuHilfe">
+   <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Hilfe</string>
+     <string>Help</string>
     </property>
     <addaction name="actionAbout_Qt"/>
     <addaction name="actionAbout"/>
    </widget>
-   <addaction name="menuDatei"/>
-   <addaction name="menuHilfe"/>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -350,10 +356,10 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionNew_Movie"/>
-   <addaction name="actionNeuer_Schauspieler"/>
+   <addaction name="actionNewMovie"/>
+   <addaction name="actionNewActor"/>
   </widget>
-  <action name="actionNew_Movie">
+  <action name="actionNewMovie">
    <property name="icon">
     <iconset resource="res/resources.qrc">
      <normaloff>:/icons/film_add.png</normaloff>:/icons/film_add.png</iconset>
@@ -371,9 +377,9 @@
     <bool>true</bool>
    </property>
   </action>
-  <action name="actionSchlie_en">
+  <action name="actionClose">
    <property name="text">
-    <string>Schließen</string>
+    <string>Close</string>
    </property>
   </action>
   <action name="actionAbout_Qt">
@@ -386,13 +392,13 @@
     <string>About</string>
    </property>
   </action>
-  <action name="actionNeuer_Schauspieler">
+  <action name="actionNewActor">
    <property name="icon">
     <iconset resource="res/resources.qrc">
      <normaloff>:/icons/user_add.png</normaloff>:/icons/user_add.png</iconset>
    </property>
    <property name="text">
-    <string>Neuer Schauspieler</string>
+    <string>New Actor</string>
    </property>
   </action>
  </widget>
