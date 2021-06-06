@@ -324,6 +324,7 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionProperties"/>
     <addaction name="separator"/>
     <addaction name="actionClose"/>
    </widget>
@@ -399,6 +400,14 @@
    </property>
    <property name="text">
     <string>New Actor</string>
+   </property>
+  </action>
+  <action name="actionProperties">
+   <property name="text">
+    <string>Properties</string>
+   </property>
+   <property name="toolTip">
+    <string>Open the Configuration Window</string>
    </property>
   </action>
  </widget>

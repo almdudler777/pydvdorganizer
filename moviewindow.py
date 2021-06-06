@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt, QSize, QDate, QVariant
+from PyQt5.QtCore import Qt, QSize, QDate, QVariant, QEvent
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QTreeWidgetItem, QDialogButtonBox, QDialog, QWidget, QMessageBox
 
@@ -156,3 +156,8 @@ class MovieWindow(QDialog, Ui_movieWindow):
                 return
 
         super().done(result)
+
+    def changeEvent(self, event):
+        if event.type() == QEvent.LanguageChange:
+            self.retranslateUi(self)
+        super().changeEvent(event)

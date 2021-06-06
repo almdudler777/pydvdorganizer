@@ -166,6 +166,9 @@ class Ui_MainWindow(object):
         icon4.addPixmap(QtGui.QPixmap(":/icons/user_add.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionNewActor.setIcon(icon4)
         self.actionNewActor.setObjectName("actionNewActor")
+        self.actionProperties = QtWidgets.QAction(MainWindow)
+        self.actionProperties.setObjectName("actionProperties")
+        self.menuFile.addAction(self.actionProperties)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionClose)
         self.menuHelp.addAction(self.actionAbout_Qt)
@@ -207,4 +210,6 @@ class Ui_MainWindow(object):
         self.actionAbout_Qt.setText(_translate("MainWindow", "About Qt"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actionNewActor.setText(_translate("MainWindow", "New Actor"))
+        self.actionProperties.setText(_translate("MainWindow", "Properties"))
+        self.actionProperties.setToolTip(_translate("MainWindow", "Open the Configuration Window"))
 from ui_modules import resources_rc

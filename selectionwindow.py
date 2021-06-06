@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt, QSize, QDate, QVariant
+from PyQt5.QtCore import Qt, QSize, QDate, QVariant, QEvent
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QTreeWidgetItem, QDialogButtonBox, QDialog, QWidget, QHeaderView, QMessageBox
 
@@ -57,3 +57,8 @@ class SelectionWindow(QDialog, Ui_selectionWindow):
             if not item.data(0, role.value) == None:
                 ret.append(int(item.data(0, role.value)))
         return ret
+
+    def changeEvent(self, event):
+        if event.type() == QEvent.LanguageChange:
+            self.retranslateUi(self)
+        super().changeEvent(event)

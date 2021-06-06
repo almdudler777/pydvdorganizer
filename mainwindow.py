@@ -1,8 +1,9 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QEvent
 from PyQt5.QtWidgets import QHeaderView, QMainWindow, QMessageBox, QTreeWidgetItem, QDialog
 
 import roles
 from actorwindow import ActorWindow
+from configwindow import ConfigWindow
 from models import Movie
 from moviewindow import MovieWindow
 from ui_modules.mainwindow import Ui_MainWindow
@@ -46,6 +47,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btnPageBack.clicked.connect(self.evtbtnPageBack_clicked)
         self.btnPageForth.clicked.connect(self.evtbtnPageForth_clicked)
         self.cbxPageSelector.activated.connect(self.evtcbxPageSelector_activated)
+        self.actionProperties.triggered.connect(self.evtPropertiesTriggered)
+
+    def evtPropertiesTriggered(self):
+        w = ConfigWindow(self)
+        if w.exec_() == QDialog.Accepted:
+            print("Piippi...")
 
     def evtAboutQtTriggered(self):
         QMessageBox.aboutQt(self)
@@ -144,3 +151,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             => LIMIT -1, -1 which will be graciously ignored by sqlite
             '''
             return -1
+
+    def changeEvent(self, event):
+        if event.type() == QEvent.LanguageChange:
+            self.retranslateUi(self)
+        #super().changeEvent(event)
