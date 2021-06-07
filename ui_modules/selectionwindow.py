@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui\selectionwindow.ui'
+# Form implementation generated from reading ui file 'ui/selectionwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -22,6 +22,9 @@ class Ui_selectionWindow(object):
         sizePolicy.setHeightForWidth(selectionWindow.sizePolicy().hasHeightForWidth())
         selectionWindow.setSizePolicy(sizePolicy)
         selectionWindow.setMinimumSize(QtCore.QSize(340, 700))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        selectionWindow.setWindowIcon(icon)
         selectionWindow.setModal(False)
         self.verticalLayout = QtWidgets.QVBoxLayout(selectionWindow)
         self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
@@ -54,3 +57,4 @@ class Ui_selectionWindow(object):
         _translate = QtCore.QCoreApplication.translate
         selectionWindow.setWindowTitle(_translate("selectionWindow", "Dialog"))
         self.treeWidget.headerItem().setText(0, _translate("selectionWindow", "Schauspieler"))
+from ui_modules import resources_rc
