@@ -7,9 +7,11 @@ import sys
 if sys.platform.startswith('win32'):
     binary_pyuic5="pyuic5.exe"
     binary_pylupdate5="pylupdate5.exe"
+    binary_qt5tools="qt5-tools.exe"
 elif sys.platform.startswith('linux'):
     binary_pyuic5="pyuic5"
     binary_pylupdate5 = "pylupdate5"
+    binary_qt5tools = "qt5-tools"
 else:
     print("OS Type not supported.")
     exit(1)
@@ -33,7 +35,8 @@ tr_sources = [
 ]
 
 ts_files = [
-    'de_DE'
+    'de_DE',
+    'fr_FR'
 ]
 
 print("")
@@ -41,6 +44,8 @@ print("Creating translation base-files...")
 for ts_file in ts_files:
     cmd = f"{binary_pylupdate5} -verbose -noobsolete {' '.join(tr_sources)} -ts translations/{ts_file}.ts"
     print(f"CMD: {cmd}")
+    os.system(cmd)
+    cmd = f"{binary_qt5tools} lrelease -compress translations/{ts_file}.ts"
     os.system(cmd)
 
 #pyinstaller.exe --onefile --windowed --icon ui\res\logo.ico main.py

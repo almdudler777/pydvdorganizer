@@ -12,8 +12,9 @@ class ConfigWindow(QDialog, Ui_configWindow):
         self.setupUi(self)
 
         options = [
-            ("English", None),
-            ("Deutsch", "de_DE"),
+            (self.tr("English"), None),
+            (self.tr("German"), "de_DE"),
+            (self.tr("French"), "fr_FR")
         ]
 
         main.translator = QTranslator(QApplication.instance())

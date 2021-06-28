@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="de_DE" sourcelanguage="en_US">
+<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="en_US">
 <context>
     <name>ConfigWindow</name>
     <message>
         <location filename="../configwindow.py" line="15"/>
         <source>English</source>
-        <translation>Englisch</translation>
+        <translation>anglais</translation>
     </message>
     <message>
         <location filename="../configwindow.py" line="16"/>
         <source>German</source>
-        <translation>Deutsch</translation>
+        <translation>allemand</translation>
     </message>
     <message>
         <location filename="../configwindow.py" line="17"/>
         <source>French</source>
-        <translation>Französisch</translation>
+        <translation>français</translation>
     </message>
 </context>
 <context>
@@ -28,68 +28,67 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="188"/>
         <source>Enter anything to filter the results...</source>
-        <translation>Gebe einen Filterbegriff ein...
-</translation>
+        <translation>Entrez quelque chose pour filtrer les résultats...</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="189"/>
         <source>Filter...</source>
-        <translation>Filter...</translation>
+        <translation>filtre...</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="190"/>
         <source>Items per Page: </source>
-        <translation>Einträge pro Seite: </translation>
+        <translation>Objets par page</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="191"/>
         <source>All</source>
-        <translation>Alle</translation>
+        <translation>Toute</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="192"/>
         <source>Database</source>
-        <translation>Datenbank</translation>
+        <translation>Base de données</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="194"/>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation>Titre</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="195"/>
         <source>Length</source>
-        <translation>Länge</translation>
+        <translation>Longueur</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="196"/>
         <source>Disks</source>
-        <translation>Medien</translation>
+        <translation>Disques</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="197"/>
         <source>PEGI</source>
-        <translation>USK</translation>
+        <translation>VA</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="198"/>
         <source>Categories</source>
-        <translation>Kategorien</translation>
+        <translation>Catégories</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="199"/>
         <source>Cast</source>
-        <translation>Schauspieler</translation>
+        <translation>acteurs</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="200"/>
         <source>Price</source>
-        <translation>Preis</translation>
+        <translation>Prix</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="201"/>
         <source>Page:</source>
-        <translation>Seite:</translation>
+        <translation>Page:</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="203"/>
@@ -99,12 +98,12 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="204"/>
         <source>File</source>
-        <translation>Datei</translation>
+        <translation>Ficher</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="205"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation>Aider</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="206"/>
@@ -114,42 +113,42 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="207"/>
         <source>New Movie</source>
-        <translation>Neuer Film</translation>
+        <translation>Nouveau film</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="208"/>
         <source>Create a New Movie Object</source>
-        <translation>Erstelle ein neues Filmobjekt</translation>
+        <translation>Créer un nouvel film</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="209"/>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation>Fermer</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="210"/>
         <source>About Qt</source>
-        <translation>Über Qt</translation>
+        <translation>À propos de Qt</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="211"/>
         <source>About</source>
-        <translation>Über</translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="212"/>
         <source>New Actor</source>
-        <translation>Neuer Schauspieler</translation>
+        <translation>Nouvel acteur</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="213"/>
         <source>Properties</source>
-        <translation>Einstellungen</translation>
+        <translation>Propriétés</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="214"/>
         <source>Open the Configuration Window</source>
-        <translation>Konfigurations Fenster öffnen...</translation>
+        <translation>Ouvrir la fenêtre de configuration</translation>
     </message>
 </context>
 <context>
@@ -157,12 +156,12 @@
     <message>
         <location filename="../ui_modules/configwindow.py" line="46"/>
         <source>Properties</source>
-        <translation>Einstellungen</translation>
+        <translation>Propriétés</translation>
     </message>
     <message>
         <location filename="../ui_modules/configwindow.py" line="47"/>
         <source>Language</source>
-        <translation>Sprache</translation>
+        <translation>Langue</translation>
     </message>
 </context>
 </TS>
