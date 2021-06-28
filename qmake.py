@@ -2,13 +2,24 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 import os
+import sys
+
+if sys.platform.startswith('win32'):
+    binary_pyuic5="pyuic5.exe"
+    binary_pylupdate5="pylupdate5.exe"
+elif sys.platform.startswith('linux'):
+    binary_pyuic5="pyuic5"
+    binary_pylupdate5 = "pylupdate5"
+else:
+    print("OS Type not supported.")
+    exit(1)
 
 # recompile the ui files to ui_modules
 # this should be safe, as long as we subclass our window.py-files
-print("Compiling ui-files using pyuic5.exe...")
+print("Compiling ui-files using pyuic5...")
 for uifile in Path('ui/').rglob('*.ui'):
     filename = uifile.name.replace('.ui','')
-    cmd = f"pyuic5.exe --import-from=ui_modules -o ui_modules/{filename}.py ui/{filename}.ui"
+    cmd = f"{binary_pyuic5} --import-from=ui_modules -o ui_modules/{filename}.py ui/{filename}.ui"
     print(f"CMD: {cmd}")
     os.system(cmd)
 
@@ -28,7 +39,8 @@ ts_files = [
 print("")
 print("Creating translation base-files...")
 for ts_file in ts_files:
-    cmd = f"pylupdate5.exe -verbose -noobsolete {' '.join(tr_sources)} -ts translations/{ts_file}.ts"
+    cmd = f"{binary_pylupdate5} -verbose -noobsolete {' '.join(tr_sources)} -ts translations/{ts_file}.ts"
+    print(f"CMD: {cmd}")
     os.system(cmd)
 
 #pyinstaller.exe --onefile --windowed --icon ui\res\logo.ico main.py
