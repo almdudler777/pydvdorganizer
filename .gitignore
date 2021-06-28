@@ -133,3 +133,5 @@ dmypy.json
 /data.sqlite
 /*sqlite*
 *.backup
+translations/*.qm
+/translations/*.qm
