@@ -3,9 +3,10 @@ from PyQt5.QtWidgets import QApplication
 import mainwindow
 import ctypes
 
-# make windows show the correct icon even if hosted through pythonw.exe
-myappid = 'almdudler777.de.pydvdorganizer.0815' # arbitrary string
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+if sys.platform.startswith('win32'):
+    # make windows show the correct icon even if hosted through pythonw.exe
+    myappid = 'almdudler777.de.pydvdorganizer.0815' # arbitrary string
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 translator = None
 
