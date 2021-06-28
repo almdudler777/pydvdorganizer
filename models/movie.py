@@ -90,7 +90,7 @@ class Movie:
 
         # if the movie id is 0 we need to create a new row and later update it
         if self.id == 0:
-            if qry.exec("INSERT INTO movies (`titel`) VALUES ('New Item')"):
+            if qry.exec("INSERT INTO movies (`title`) VALUES ('New Item')"):
                 self._id = int(qry.lastInsertId())
                 qry.clear()
             else:
@@ -99,7 +99,7 @@ class Movie:
                 return
 
         qry.prepare("UPDATE movies "
-                    "SET titel = ?, laenge = ?, medien = ?, usk = ?, preis = ?, type_id = ? "
+                    "SET title = ?, length = ?, discs = ?, usk = ?, price = ?, type_id = ? "
                     "WHERE id = ?")
         qry.addBindValue(self.title)
         qry.addBindValue(self.length)
@@ -143,10 +143,10 @@ class Movie:
         qry = db.getInstance().getQuery()
 
         if start and start < 0:
-            qry.prepare("SELECT id, titel, laenge, medien, usk, preis FROM movies ORDER BY titel COLLATE NOCASE ASC")
+            qry.prepare("SELECT id, title, length, discs, usk, price FROM movies ORDER BY title COLLATE NOCASE ASC")
         else:
             qry.prepare(
-                "SELECT id, titel, laenge, medien, usk, preis FROM movies ORDER BY titel COLLATE NOCASE ASC LIMIT ?,?")
+                "SELECT id, title, length, discs, usk, price FROM movies ORDER BY title COLLATE NOCASE ASC LIMIT ?,?")
             qry.addBindValue(start)
             qry.addBindValue(max)
 
@@ -181,7 +181,7 @@ class Movie:
     def getMovieById(cls, id_: int):
         ret: Movie = None
         qry = db.getInstance().getQuery()
-        qry.prepare("SELECT id, titel, laenge, medien, usk, preis, type_id FROM movies WHERE id = ?")
+        qry.prepare("SELECT id, title, length, discs, usk, price, type_id FROM movies WHERE id = ?")
         qry.addBindValue(id_)
         if qry.exec() and qry.next():
             ret = Movie(
@@ -201,12 +201,12 @@ class Movie:
         ret: List[Movie] = list()
         qry = db.getInstance().getQuery()
         qry.prepare("SELECT "
-                    "id, titel, laenge, medien, usk, preis, type_id "
+                    "id, title, length, discs, usk, price, type_id "
                     "FROM movies "
                     "WHERE id IN ("
                     "SELECT movie_id FROM cast WHERE actor_id = ?"
                     ") "
-                    "ORDER BY titel "
+                    "ORDER BY title "
                     "COLLATE NOCASE ASC")
         qry.addBindValue(actor.id)
         if qry.exec():
@@ -228,10 +228,10 @@ class Movie:
         qry = db.getInstance().getQuery()
         ret = list()
 
-        qry.prepare("SELECT id, titel, laenge, medien, usk, preis "
+        qry.prepare("SELECT id, title, length, discs, usk, price "
                     "FROM movies "
                     "WHERE type_id = ? "
-                    "ORDER BY titel "
+                    "ORDER BY title "
                     "COLLATE NOCASE ASC")
         qry.addBindValue(type.id)
         if qry.exec():
