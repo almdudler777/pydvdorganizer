@@ -180,13 +180,13 @@ class Ui_movieWindow(object):
 
     def retranslateUi(self, movieWindow):
         _translate = QtCore.QCoreApplication.translate
-        movieWindow.setWindowTitle(_translate("movieWindow", "Neuer Film"))
-        self.label_2.setText(_translate("movieWindow", "Medien:"))
+        movieWindow.setWindowTitle(_translate("movieWindow", "New Movie"))
+        self.label_2.setText(_translate("movieWindow", "Discs:"))
         self.label.setText(_translate("movieWindow", "Name:"))
         self.preis.setSuffix(_translate("movieWindow", "€"))
-        self.label_3.setText(_translate("movieWindow", "Länge:\n"
-"(Minuten)"))
-        self.label_4.setText(_translate("movieWindow", "Preis:"))
+        self.label_3.setText(_translate("movieWindow", "Length:\n"
+"(Minutes)"))
+        self.label_4.setText(_translate("movieWindow", "Price:"))
         self.schauspielerAdd.setText(_translate("movieWindow", "..."))
         self.SchauspielerRemove.setText(_translate("movieWindow", "..."))
         self.usk.setItemText(0, _translate("movieWindow", "0"))
@@ -194,13 +194,13 @@ class Ui_movieWindow(object):
         self.usk.setItemText(2, _translate("movieWindow", "12"))
         self.usk.setItemText(3, _translate("movieWindow", "16"))
         self.usk.setItemText(4, _translate("movieWindow", "18"))
-        self.label_5.setText(_translate("movieWindow", "USK:"))
-        self.schauspielerTree.headerItem().setText(0, _translate("movieWindow", "Schauspieler"))
-        self.kategorieTree.headerItem().setText(0, _translate("movieWindow", "Kategorien"))
+        self.label_5.setText(_translate("movieWindow", "ESRB:"))
+        self.schauspielerTree.headerItem().setText(0, _translate("movieWindow", "Cast"))
+        self.kategorieTree.headerItem().setText(0, _translate("movieWindow", "Categories"))
         self.kategorieAdd.setText(_translate("movieWindow", "..."))
         self.kategorieRemove.setText(_translate("movieWindow", "..."))
-        self.label_6.setText(_translate("movieWindow", "Jahr:"))
+        self.label_6.setText(_translate("movieWindow", "Year:"))
         self.release.setDisplayFormat(_translate("movieWindow", "yyyy"))
-        self.label_7.setText(_translate("movieWindow", "Gekauft:"))
-        self.label_8.setText(_translate("movieWindow", "Typ:"))
+        self.label_7.setText(_translate("movieWindow", "Purchased:"))
+        self.label_8.setText(_translate("movieWindow", "Type:"))
 from ui_modules import resources_rc

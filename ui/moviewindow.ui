@@ -26,7 +26,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Neuer Film</string>
+   <string>New Movie</string>
   </property>
   <property name="windowIcon">
    <iconset resource="res/resources.qrc">
@@ -54,7 +54,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Medien:</string>
+        <string>Discs:</string>
        </property>
       </widget>
      </item>
@@ -97,8 +97,8 @@
      <item row="1" column="2">
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Länge:
-(Minuten)</string>
+        <string>Length:
+(Minutes)</string>
        </property>
        <property name="textFormat">
         <enum>Qt::AutoText</enum>
@@ -108,7 +108,7 @@
      <item row="1" column="4">
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Preis:</string>
+        <string>Price:</string>
        </property>
       </widget>
      </item>
@@ -182,7 +182,7 @@
      <item row="2" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>USK:</string>
+        <string>ESRB:</string>
        </property>
       </widget>
      </item>
@@ -208,7 +208,7 @@
        </property>
        <column>
         <property name="text">
-         <string>Schauspieler</string>
+         <string>Cast</string>
         </property>
        </column>
       </widget>
@@ -242,7 +242,7 @@
        </property>
        <column>
         <property name="text">
-         <string>Kategorien</string>
+         <string>Categories</string>
         </property>
        </column>
       </widget>
@@ -285,7 +285,7 @@
      <item row="2" column="2">
       <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>Jahr:</string>
+        <string>Year:</string>
        </property>
       </widget>
      </item>
@@ -302,7 +302,7 @@
      <item row="2" column="4">
       <widget class="QLabel" name="label_7">
        <property name="text">
-        <string>Gekauft:</string>
+        <string>Purchased:</string>
        </property>
       </widget>
      </item>
@@ -319,7 +319,7 @@
      <item row="3" column="0">
       <widget class="QLabel" name="label_8">
        <property name="text">
-        <string>Typ:</string>
+        <string>Type:</string>
        </property>
       </widget>
      </item>
