@@ -32,6 +32,8 @@ tr_sources = [
     'ui_modules/mainwindow.py',
     'configwindow.py',
     'ui_modules/configwindow.py',
+    'moviewindow.py',
+    'ui_modules/moviewindow.py',
 ]
 
 ts_files = [
@@ -48,10 +50,29 @@ for ts_file in ts_files:
     cmd = f"{binary_qt5tools} lrelease -compress translations/{ts_file}.ts"
     os.system(cmd)
 
+
+print("")
+print("Creating translation ressource file...")
+files = ""
+for qmfile in Path('translations/').rglob('*.qm'):
+    files += "<file>{}</file>".format(qmfile.name)
+
+with open("translations/translations.qrc", "wt") as qrcfile:
+    qrcfile.write("""<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="translations">
+    {}
+</qresource>
+</RCC>   
+    """.format(files))
+
+print("Written translations.qrc ... Compiling ...")
+cmd = f"pyrcc5 translations/translations.qrc -o translations/translations_rc.py"
+print(cmd)
+os.system(cmd)
+
+
+
 #pyinstaller.exe --onefile --windowed --icon ui\res\logo.ico main.py
-#pyrcc5 resources.qrc -o resources.py
-#pyuic5.exe --import-from=ui_modules -o ui_modules\actorwindow.py ui\actorwindow.ui
-#pyrcc5 ui\res\resources.qrc -o ui_modules\resources_rc.py
 #env\Scripts\pylupdate5.exe translations\my.pro
 #pylupdate5 main.py  -ts eng-fr.ts
 #lrelease eng-fr.ts eng-chs.qm
