@@ -67,11 +67,6 @@
         <translation>Medien</translation>
     </message>
     <message>
-        <location filename="../ui_modules/mainwindow.py" line="197"/>
-        <source>PEGI</source>
-        <translation>USK</translation>
-    </message>
-    <message>
         <location filename="../ui_modules/mainwindow.py" line="198"/>
         <source>Categories</source>
         <translation>Kategorien</translation>
@@ -151,18 +146,123 @@
         <source>Open the Configuration Window</source>
         <translation>Konfigurations Fenster öffnen...</translation>
     </message>
+    <message>
+        <location filename="../ui_modules/mainwindow.py" line="197"/>
+        <source>Rating</source>
+        <translation>USK</translation>
+    </message>
 </context>
 <context>
     <name>configWindow</name>
     <message>
-        <location filename="../ui_modules/configwindow.py" line="46"/>
+        <location filename="../ui_modules/configwindow.py" line="48"/>
         <source>Properties</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../ui_modules/configwindow.py" line="47"/>
+        <location filename="../ui_modules/configwindow.py" line="49"/>
         <source>Language</source>
         <translation>Sprache</translation>
+    </message>
+</context>
+<context>
+    <name>movieWindow</name>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="184"/>
+        <source>Discs:</source>
+        <translation>Medien:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="185"/>
+        <source>Name:</source>
+        <translation>Name:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="187"/>
+        <source>Length:
+(Minutes)</source>
+        <translation>Länge:
+(Minuten)</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="189"/>
+        <source>Price:</source>
+        <translation>Preis:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="201"/>
+        <source>...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="192"/>
+        <source>0</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="193"/>
+        <source>6</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="194"/>
+        <source>12</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="195"/>
+        <source>16</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="196"/>
+        <source>18</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="197"/>
+        <source>ESRB:</source>
+        <translation>USK:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="198"/>
+        <source>Cast</source>
+        <translation>Schauspieler</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="199"/>
+        <source>Categories</source>
+        <translation>Kategorien</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="202"/>
+        <source>Year:</source>
+        <translation>Jahr:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="203"/>
+        <source>yyyy</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="204"/>
+        <source>Purchased:</source>
+        <translation>Gekauft:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="205"/>
+        <source>Type:</source>
+        <translation>Typ:</translation>
+    </message>
+    <message>
+        <location filename="../ui_modules/moviewindow.py" line="183"/>
+        <source>New Movie</source>
+        <translation>Neuer Film</translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../ui_modules/moviewindow.py" line="186"/>
+        <source>€</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
