@@ -194,7 +194,7 @@ class Ui_MainWindow(object):
         self.trwMovieList.headerItem().setText(0, _translate("MainWindow", "Title"))
         self.trwMovieList.headerItem().setText(1, _translate("MainWindow", "Length"))
         self.trwMovieList.headerItem().setText(2, _translate("MainWindow", "Disks"))
-        self.trwMovieList.headerItem().setText(3, _translate("MainWindow", "PEGI"))
+        self.trwMovieList.headerItem().setText(3, _translate("MainWindow", "Rating"))
         self.trwMovieList.headerItem().setText(4, _translate("MainWindow", "Categories"))
         self.trwMovieList.headerItem().setText(5, _translate("MainWindow", "Cast"))
         self.trwMovieList.headerItem().setText(6, _translate("MainWindow", "Price"))

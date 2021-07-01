@@ -221,7 +221,7 @@
        </column>
        <column>
         <property name="text">
-         <string>PEGI</string>
+         <string>Rating</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>

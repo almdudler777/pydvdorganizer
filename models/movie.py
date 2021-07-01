@@ -99,7 +99,7 @@ class Movie:
                 return
 
         qry.prepare("UPDATE movies "
-                    "SET title = ?, length = ?, discs = ?, usk = ?, price = ?, type_id = ? "
+                    "SET title = ?, length = ?, discs = ?, rating = ?, price = ?, type_id = ? "
                     "WHERE id = ?")
         qry.addBindValue(self.title)
         qry.addBindValue(self.length)
@@ -143,10 +143,10 @@ class Movie:
         qry = db.getInstance().getQuery()
 
         if start and start < 0:
-            qry.prepare("SELECT id, title, length, discs, usk, price FROM movies ORDER BY title COLLATE NOCASE ASC")
+            qry.prepare("SELECT id, title, length, discs, rating, price FROM movies ORDER BY title COLLATE NOCASE ASC")
         else:
             qry.prepare(
-                "SELECT id, title, length, discs, usk, price FROM movies ORDER BY title COLLATE NOCASE ASC LIMIT ?,?")
+                "SELECT id, title, length, discs, rating, price FROM movies ORDER BY title COLLATE NOCASE ASC LIMIT ?,?")
             qry.addBindValue(start)
             qry.addBindValue(max)
 
@@ -181,7 +181,7 @@ class Movie:
     def getMovieById(cls, id_: int):
         ret: Movie = None
         qry = db.getInstance().getQuery()
-        qry.prepare("SELECT id, title, length, discs, usk, price, type_id FROM movies WHERE id = ?")
+        qry.prepare("SELECT id, title, length, discs, rating, price, type_id FROM movies WHERE id = ?")
         qry.addBindValue(id_)
         if qry.exec() and qry.next():
             ret = Movie(
@@ -201,7 +201,7 @@ class Movie:
         ret: List[Movie] = list()
         qry = db.getInstance().getQuery()
         qry.prepare("SELECT "
-                    "id, title, length, discs, usk, price, type_id "
+                    "id, title, length, discs, rating, price, type_id "
                     "FROM movies "
                     "WHERE id IN ("
                     "SELECT movie_id FROM cast WHERE actor_id = ?"
@@ -228,7 +228,7 @@ class Movie:
         qry = db.getInstance().getQuery()
         ret = list()
 
-        qry.prepare("SELECT id, title, length, discs, usk, price "
+        qry.prepare("SELECT id, title, length, discs, rating, price "
                     "FROM movies "
                     "WHERE type_id = ? "
                     "ORDER BY title "
