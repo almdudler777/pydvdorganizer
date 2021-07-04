@@ -28,8 +28,7 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="188"/>
         <source>Enter anything to filter the results...</source>
-        <translation>Gebe einen Filterbegriff ein...
-</translation>
+        <translation>Gebe einen Filterbegriff ein...</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="189"/>
@@ -144,12 +143,25 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="214"/>
         <source>Open the Configuration Window</source>
-        <translation>Konfigurations Fenster öffnen...</translation>
+        <translation>Konfigurations Fenster öffnen</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="197"/>
         <source>Rating</source>
         <translation>USK</translation>
+    </message>
+</context>
+<context>
+    <name>MovieWindow</name>
+    <message>
+        <location filename="../moviewindow.py" line="43"/>
+        <source>Update movie</source>
+        <translation>Film bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../moviewindow.py" line="70"/>
+        <source>Create new movie</source>
+        <translation>Neuen FIlm erstellen</translation>
     </message>
 </context>
 <context>

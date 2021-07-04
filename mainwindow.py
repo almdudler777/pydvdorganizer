@@ -52,7 +52,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def evtPropertiesTriggered(self):
         w = ConfigWindow(self)
         if w.exec_() == QDialog.Accepted:
-            print("Piippi...")
+            pass # TODO: complete
 
     def evtAboutQtTriggered(self):
         QMessageBox.aboutQt(self)
@@ -126,7 +126,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             # disable back button if we're on first page
             self.btnPageBack.setEnabled(False if self.currentPage == 0 else True)
-            # disable forward button if were ont the last page
+            # disable forward button if were on the last page
             self.btnPageForth.setEnabled(False if self.currentPage == numberOfPages else True)
             self.cbxPageSelector.setEnabled(True)
         else:
@@ -155,4 +155,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def changeEvent(self, event):
         if event.type() == QEvent.LanguageChange:
             self.retranslateUi(self)
-        #super().changeEvent(event)
+        super().changeEvent(event)

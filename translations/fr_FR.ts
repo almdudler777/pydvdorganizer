@@ -38,7 +38,7 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="190"/>
         <source>Items per Page: </source>
-        <translation>Objets par page</translation>
+        <translation>Objets par page: </translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="191"/>
@@ -73,7 +73,7 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="199"/>
         <source>Cast</source>
-        <translation>acteurs</translation>
+        <translation>Acteurs</translation>
     </message>
     <message>
         <location filename="../ui_modules/mainwindow.py" line="200"/>
@@ -148,7 +148,20 @@
     <message>
         <location filename="../ui_modules/mainwindow.py" line="197"/>
         <source>Rating</source>
-        <translation type="unfinished"></translation>
+        <translation>CERS</translation>
+    </message>
+</context>
+<context>
+    <name>MovieWindow</name>
+    <message>
+        <location filename="../moviewindow.py" line="43"/>
+        <source>Update movie</source>
+        <translation>Mettre à jour le film</translation>
+    </message>
+    <message>
+        <location filename="../moviewindow.py" line="70"/>
+        <source>Create new movie</source>
+        <translation>Créer un nouveau film</translation>
     </message>
 </context>
 <context>
@@ -221,7 +234,7 @@
     <message>
         <location filename="../ui_modules/moviewindow.py" line="197"/>
         <source>ESRB:</source>
-        <translation type="unfinished"></translation>
+        <translation>CERS:</translation>
     </message>
     <message>
         <location filename="../ui_modules/moviewindow.py" line="198"/>

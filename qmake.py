@@ -48,6 +48,7 @@ for ts_file in ts_files:
     print(f"CMD: {cmd}")
     os.system(cmd)
     cmd = f"{binary_qt5tools} lrelease -compress translations/{ts_file}.ts"
+    print(f"CMD: {cmd}")
     os.system(cmd)
 
 

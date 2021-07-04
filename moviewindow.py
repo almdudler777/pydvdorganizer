@@ -40,7 +40,7 @@ class MovieWindow(QDialog, Ui_movieWindow):
             self.typ.addItem(type.name, QVariant(type.id))
 
         if movieId > 0:  # we're going to edit a movie that already exists
-            self.setWindowTitle("Film bearbeiten")
+            self.setWindowTitle(self.tr("Update movie"))
             mov = Movie.getMovieById(movieId)
             self.titel.setText(mov.title)
             self.laenge.setValue(mov.length)
@@ -67,7 +67,7 @@ class MovieWindow(QDialog, Ui_movieWindow):
                     self.typ.setCurrentIndex(i)
 
         else:  # we're going to create a new movie
-            self.setWindowTitle("Neuen Film anlegen")
+            self.setWindowTitle(self.tr("Create new movie"))
             # set the date fields to a date nearby
             self.gekauft.setDate(QDate.currentDate())
             self.release.setDate(QDate.currentDate())
