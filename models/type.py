@@ -51,6 +51,7 @@ class Type:
     @classmethod
     def getAllTypes(cls):
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
         ret: list = list()
         if qry.exec("SELECT id, name FROM type"):
             while qry.next():

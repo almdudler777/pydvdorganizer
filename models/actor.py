@@ -82,6 +82,7 @@ class Actor:
     def getAllActors(cls) -> list:
         ret: list = list()
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
 
         if qry.exec("SELECT name, prename, id FROM actors ORDER BY name ASC"):
             while qry.next():
@@ -99,6 +100,7 @@ class Actor:
     def getActorsByMovieId(cls, movieId: int) -> list:
         ret: list = list()
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
 
         qry.prepare("SELECT name, prename, id FROM actors WHERE id IN (SELECT actor_id FROM cast WHERE movie_id = ?)")
         qry.addBindValue(movieId)

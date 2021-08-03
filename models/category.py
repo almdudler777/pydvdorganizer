@@ -48,6 +48,7 @@ class Category:
     def getAllCategories(cls):
         ret: list = list()
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
         if qry.exec("SELECT id, name FROM category ORDER BY name ASC"):
             while qry.next():
                 ret.append(
@@ -72,6 +73,7 @@ class Category:
     def getCategoriesByMovieId(cls, movieId: int):
         ret: list = list()
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
         qry.prepare("SELECT id, name FROM category WHERE id IN (SELECT category_id FROM tags WHERE movie_id = ?)")
         qry.addBindValue(movieId)
         if qry.exec():

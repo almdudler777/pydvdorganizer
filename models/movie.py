@@ -98,9 +98,17 @@ class Movie:
                 d.rollback()
                 return
 
-        qry.prepare("UPDATE movies "
-                    "SET title = ?, length = ?, discs = ?, rating = ?, price = ?, type_id = ? "
-                    "WHERE id = ?")
+        qry.prepare("""
+            UPDATE movies 
+            SET 
+                title = ?, 
+                length = ?, 
+                discs = ?, 
+                rating = ?, 
+                price = ?, 
+                type_id = ? 
+            WHERE id = ?
+            """)
         qry.addBindValue(self.title)
         qry.addBindValue(self.length)
         qry.addBindValue(self.mediums)
@@ -141,6 +149,7 @@ class Movie:
     def getAllMovies(cls, start: int = -1, max: int = -1):
         ret: list = list()
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
 
         if start and start < 0:
             qry.prepare("SELECT id, title, length, discs, rating, price FROM movies ORDER BY title COLLATE NOCASE ASC")
@@ -200,6 +209,7 @@ class Movie:
     def getMoviesByActor(cls, actor: Actor) -> List[Movie]:
         ret: List[Movie] = list()
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
         qry.prepare("SELECT "
                     "id, title, length, discs, rating, price, type_id "
                     "FROM movies "
@@ -226,6 +236,7 @@ class Movie:
     @classmethod
     def getMoviesByType(cls, type: Type):
         qry = db.getInstance().getQuery()
+        qry.setForwardOnly(True)
         ret = list()
 
         qry.prepare("SELECT id, title, length, discs, rating, price "
