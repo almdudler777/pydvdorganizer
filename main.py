@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QApplication
 import mainwindow
 import ctypes
 
+from database import Database
+
 if sys.platform.startswith('win32'):
     # make windows show the correct icon even if hosted through pythonw.exe
     myappid = 'de.almdudler777.pydvdorganizer'
@@ -12,6 +14,12 @@ translator = None
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
+    # Call DB getInstance once here before the mainwindow is shown
+    # this will perform migrations and may crash, but it will prevent
+    # the window from flashing (opening and immediatly closing)
+    Database.getInstance()
+
     mainWindow = mainwindow.MainWindow()
     mainWindow.show()
     app.exec_()
