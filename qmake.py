@@ -59,7 +59,8 @@ for qmfile in Path('translations/').rglob('*.qm'):
     files += "<file>{}</file>".format(qmfile.name)
 
 with open("translations/translations.qrc", "wt") as qrcfile:
-    qrcfile.write("""<!DOCTYPE RCC><RCC version="1.0">
+    qrcfile.write("""
+<!DOCTYPE RCC><RCC version="1.0">
 <qresource prefix="translations">
     {}
 </qresource>
@@ -73,8 +74,49 @@ os.system(cmd)
 
 
 
-#pyinstaller.exe --onefile --windowed --icon ui\res\logo.ico main.py
+
+print("")
+print("Creating sql-migrations ressource file...")
+files = ""
+for sqlfile in Path('sql/').rglob('*.sql'):
+    files += "<file>{}</file>".format(sqlfile.name)
+
+with open("sql/migrations.qrc", "wt") as qrcfile:
+    qrcfile.write("""
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="sql">
+    {}
+</qresource>
+</RCC>   
+    """.format(files))
+
+print("Written migrations.qrc ... Compiling ...")
+cmd = f"pyrcc5 sql/migrations.qrc -o sql/migrations_rc.py"
+print(cmd)
+os.system(cmd)
+
+
+"""
+#pyinstaller.exe --name "pydvdorganizer" --onefile --windowed --icon "ui\res\logo.ico" main.py
+
+# --add-data="hand_icon.ico;."
+or 
+a = Analysis(['app.py'],
+             pathex=['U:\\home\\martin\\helloworld'],
+             binaries=[],
+             datas=[('hand_icon.ico', '.')],
+. => location in /dist
+pyinstaller app.spec
+
+If your icon looks blurry it means you don't have large-enough icon variations in your .ico file. An .ico file can contain multiple different sized icons in the same file. Ideally you want to have 16x16, 32x32, 48x48 and 256x256 pixel sizes included, although fewer will still work.
+InstallForge
+
 #env\Scripts\pylupdate5.exe translations\my.pro
 #pylupdate5 main.py  -ts eng-fr.ts
 #lrelease eng-fr.ts eng-chs.qm
 #env\Scripts\pylupdate5.exe -noobsolete translations\my.pro
+
+This is handy when you use a SELECT 
+>>> name = query.record().indexOf("name")
+>>> query.value(name)
+"""

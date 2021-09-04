@@ -136,3 +136,4 @@ dmypy.json
 translations/*.qm
 /translations/*.qm
 /translations/translations.qrc
+/sql/migrations.qrc
