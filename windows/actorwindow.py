@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QTreeWidgetItem, QDialogButtonBox, QDialog, QWidget,
 
 import roles
 from models import Movie, Type, Actor, Category
-from selectionwindow import SelectionWindow
+from .selectionwindow import SelectionWindow
 from ui_modules.actorwindow import Ui_actorWindow
 
 

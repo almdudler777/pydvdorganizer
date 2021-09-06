@@ -2,10 +2,11 @@ from PyQt5.QtCore import Qt, QEvent
 from PyQt5.QtWidgets import QHeaderView, QMainWindow, QMessageBox, QTreeWidgetItem, QDialog
 
 import roles
-from actorwindow import ActorWindow
-from configwindow import ConfigWindow
+from .actorwindow import ActorWindow
+from .configwindow import ConfigWindow
+from .moviewindow import MovieWindow
 from models import Movie
-from moviewindow import MovieWindow
+
 from ui_modules.mainwindow import Ui_MainWindow
 import math
 

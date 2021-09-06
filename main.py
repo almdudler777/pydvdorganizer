@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-import mainwindow
+from windows import mainwindow
 import ctypes
 
 from database import Database
